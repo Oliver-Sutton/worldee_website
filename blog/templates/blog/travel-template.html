@@ -5,6 +5,7 @@
   <div class="blog">
     <p class="blog-title">{{ blog.title | upper }}</p>
     <img src="{{ blog.title_image }}"/>
+    <p class="blog-teaser">{{ blog.body_teaser }}</p>
     <p class="blog-content">{{ blog.body | safe }}</p>
     <p class="blog-date">Posted on {{ blog.date | date:"d.m.y"}} by {{ blog.posted_by }}</p>
   </div>
@@ -21,5 +22,19 @@
     <li><a href="#">Place holder</a></li>
   </ul>
 </div>
+
+<script>
+
+  let topPlacement = parseInt($(".more-content").css("top"), 10)
+
+  $(window).scroll(function(){
+
+    $(".more-content").css("top", topPlacement - $(window).scrollTop())
+
+    console.log(topPlacement - parseInt($(window).scrollTop(), 10))
+
+  })
+
+</script>
 
 {% endblock %}
