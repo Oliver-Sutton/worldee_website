@@ -7,17 +7,6 @@
     src: url('fonts/BrandonGrotesque400normal.woff');
 }
 
-/* Smartphones -----------
-@media only screen and (max-width: 760px) {
-  .default {
-    display: none;
-  }
-
-  .mobile {
-    display: inline;
-  }
-}
-
 /* ------------------------------------------
                     Header
 ------------------------------------------- */
@@ -26,7 +15,6 @@
     width: 60%;
     margin: 0 auto;
     height: 40px;
-    background-color: #ffffff;
 }
 
 .default a,
@@ -116,7 +104,7 @@ input {
 .social-instagram {
   width: 25px;
   height: 25px;
-  background: url('../images/instagram-default.png') no-repeat;
+  background: url('../images/instagram-default.svg') no-repeat;
   background-size: 25px 25px;
   transition: 0.5s;
 }
@@ -124,7 +112,55 @@ input {
 .social-instagram:hover {
   width: 25px;
   height: 25px;
-  background: url('../images/instagram-hover.png') no-repeat;
+  background: url('../images/instagram-hover.svg') no-repeat;
+  background-size: 25px 25px;
+  transition: 0.5s;
+}
+
+.social-facebook {
+  width: 25px;
+  height: 25px;
+  background: url('../images/facebook-default.svg') no-repeat;
+  background-size: 25px 25px;
+  transition: 0.5s;
+}
+
+.social-facebook:hover {
+  width: 25px;
+  height: 25px;
+  background: url('../images/facebook-hover.svg') no-repeat;
+  background-size: 25px 25px;
+  transition: 0.5s;
+}
+
+.social-pinterest {
+  width: 25px;
+  height: 25px;
+  background: url('../images/pinterest-default.svg') no-repeat;
+  background-size: 25px 25px;
+  transition: 0.5s;
+}
+
+.social-pinterest:hover {
+  width: 25px;
+  height: 25px;
+  background: url('../images/pinterest-hover.svg') no-repeat;
+  background-size: 25px 25px;
+  transition: 0.5s;
+}
+
+.social-twitter {
+  width: 25px;
+  height: 25px;
+  background: url('../images/twitter-default.svg') no-repeat;
+  background-size: 25px 25px;
+  transition: 0.5s;
+}
+
+.social-twitter:hover {
+  width: 25px;
+  height: 25px;
+  background: url('../images/twitter-hover.svg') no-repeat;
   background-size: 25px 25px;
   transition: 0.5s;
 }

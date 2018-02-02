@@ -1,0 +1,29 @@
+facebook default:
+0 0 27 x 27
+
+facebook hover:
+0 27 27 x 27
+
+twitter default:
+
+37 0 27 x 27
+
+twitter hover:
+
+37 27 27 x 27
+
+pinterest default:
+
+71 0 27 x 27
+
+pinterest hover:
+
+71 27 27 x 27
+
+instagram default:
+
+104 0 27 x 27
+
+instagram hover:
+
+104 27 27 x 27
