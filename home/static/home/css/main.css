@@ -7,15 +7,15 @@
                   Header
 ------------------------------------------- */
 
-nav {
+.default {
     width: 60%;
     margin: 0 auto;
     height: 40px;
     background-color: #ffffff;
 }
 
-nav a,
-nav li a {
+.default a,
+.default li a {
   padding: 0 0.3em 0 0.3em;
   font-size: 16px;
   font-weight: 700;
@@ -24,27 +24,27 @@ nav li a {
   text-decoration: none;
 }
 
-nav ul,
-nav ul li {
+.default ul,
+.default ul li {
   list-style-type: none;
   padding: 4px 0 0 0;
   margin: 0;
   display: inline-block;
 }
 
-nav a,
-nav ul li a {
+.default a,
+.default ul li a {
     color: #173872;
     transition: 0.5s;
 }
 
-nav a:hover,
-nav ul li a:hover {
+.default a:hover,
+.default ul li a:hover {
   color: #1b90ea;
   text-decoration: none;
 }
 
-nav a {
+.default a {
   display: inline;
   text-decoration: none;
 }
@@ -166,12 +166,18 @@ input {
 }
 
 /* ------------------------------------------
+              NAV BAR Mobile
+------------------------------------------- */
+
+
+
+/* ------------------------------------------
                   Index
 ------------------------------------------- */
 
 
 /* ------------------------------------------
-                  Contact
+              Contact and FAQ
 ------------------------------------------- */
 
 .container {
@@ -199,7 +205,14 @@ input {
                   Travel
 ------------------------------------------- */
 
-.blog {
+.blog-container {
+  padding-top: 5%;
+  margin: 0 auto;
+  width: 80%;
+  text-align: center;
+  color: #173872;
+  font-size: 24px;
+  min-height: 100vh;
 }
 
 .blog-title {
@@ -289,6 +302,16 @@ input {
 /* ------------------------------------------
                 T&C + Privacy
 ------------------------------------------- */
+
+.pt-container {
+  padding-top: 5%;
+  margin: 0 auto;
+  width: 80%;
+  text-align: center;
+  color: #173872;
+  font-size: 24px;
+  min-height: 100vh;
+}
 
 .content {
   text-align: justify;

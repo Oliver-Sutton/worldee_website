@@ -11,7 +11,7 @@
         <script src="{% static 'home/js/jquery.js' %}"></script>
     </head>
     <body>
-        <nav>
+        <nav class="default">
           <ul>
             <a href="/">HOME</a>
             <a href="/travel">TRAVEL</a>
@@ -25,7 +25,7 @@
           </ul>
           <ul class="float-right">
             <li class="sub-menu-parent" tabindex="0">
-              <a href="">&bull;&nbsp;&nbsp;<i class="fa fa-search"></i>&nbsp;&nbsp;&bull;</a>
+              <a>&bull;&nbsp;&nbsp;<i class="fa fa-search"></i>&nbsp;&nbsp;&bull;</a>
                 <ul class="sub-menu">
                   <li>
                     <input class="search-input" type="text" name="Search" placeholder="Search Site"/>
@@ -34,9 +34,13 @@
             </li>
             <a href=""><img class="social-img" src="{% static 'home/images/pinterest.svg'%}" width="20px" height="20px"/></a>
             <a href=""><img class="social-instagram" width="25px" height="25px "/></a>
-            <a href="#"><img class="social-img" src="{% static 'home/images/facebook.svg'%}" width="20px" height="20px"/></a>
-            <a href="#"><img class="social-img" src="{% static 'home/images/twitter.svg'%}" width="20px" height="20px"/></a>
+            <a href=""><img class="social-img" src="{% static 'home/images/facebook.svg'%}" width="20px" height="20px"/></a>
+            <a href=""><img class="social-img" src="{% static 'home/images/twitter.svg'%}" width="20px" height="20px"/></a>
           </ul>
+        </nav>
+
+        <nav class="mobile">
+          <p>this is content can i see this content?</p>
         </nav>
 
         {% block content %}
@@ -62,45 +66,36 @@
         <script>
 
           var isScrolled = false;
-          var isShowing = true;
+
+          $(".mobile").hide();
+
+          console.log($(window).width())
+          console.log($(window).height())
 
           $(function(){
-            toggleFooter();
-
-
-            alert(height)
-
-          })
-
-          $(window).resize(function(){
-            toggleFooter();
-          })
-
-          $(window).on("scroll", function(){
-            resizeWorldeeFooter();
+            if($(window).width() < 900 || $(window).height() < 500) {
+              $(".footer").hide();
+              console.log($(window).height())
+            }
+            if($(window).width() < 500) {
+              $(".default").hide();
+              $(".mobile").show();
+            }
           });
 
-          function toggleFooter() {
-            let width = $(window).width()
-            let height = $(window).height()
-
-            if((width <= 900 && isShowing == true )|| (height <= 500 && isShowing == true)) {
-              $(".footer").hide()
-              isShowing = false
-              alert("hide")
-            } else if((isShowing == false && width > 900) || (height > 500 && isShowing == false)){
-              $(".footer").show();
-              isShowing = true;
-              alert("show")
+          $(window).resize(function(){
+            if($(window).width() < 900 || $(window).height() < 500) {
+              $(".footer").hide();
             }
-          }
+          });
+
+          $(window).on("scroll", function(){ resizeWorldeeFooter(); });
 
           function resizeWorldeeFooter(){
 
             let $win = $(window);
 
             if($win.scrollTop() < 5 && isScrolled) {
-              console.log("Top" + $win.scrollTop())
               $(".footer-img").animate({
                 height: "40vh",
                 width: "50vw"
@@ -110,7 +105,6 @@
               }, 500);
               isScrolled = false
             } else if($win.scrollTop() > 5 && !isScrolled) {
-              console.log("Bottom" + $win.scrollTop())
               $(".footer-img").animate({
                 height: "30vh",
                 width: "40vw"
