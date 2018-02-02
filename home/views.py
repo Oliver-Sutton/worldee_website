@@ -8,5 +8,8 @@ def index(request):
 def contact(request):
     return render(request, 'home/contact.html')
 
-def faq(request):
-    return render(request, 'home/faq.html')
+def tandc(request):
+    return render(request, 'home/termandconditions.html')
+
+def privacy(request):
+    return render(request, 'home/privacy.html')

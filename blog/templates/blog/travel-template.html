@@ -3,10 +3,10 @@
 {% block content %}
 <div class="container">
   <div class="blog">
-    <p class="blog-type">{{ blog.type | upper }}</p>
     <p class="blog-title">{{ blog.title | upper }}</p>
     <img src="{{ blog.title_image }}"/>
-    <p class="blog-teaser">{{ blog.body_teaser | upper }}</p>
+    <p class="blog-type">{{ blog.type | upper }}</p>
+    <p class="blog-teaser">{{ blog.body_teaser }}</p>
     <p class="blog-content">{{ blog.body | safe }}</p>
     <p class="blog-date">Posted on {{ blog.date | date:"d.m.y"}} by {{ blog.posted_by }}</p>
   </div>
@@ -28,13 +28,13 @@
 
   let topPlacement = parseInt($(".more-content").css("top"), 10)
 
+  $(function(){
+    $(".footer").hide();
+  });
+
   $(window).scroll(function(){
-
-    $(".more-content").css("top", topPlacement - $(window).scrollTop())
-
-    console.log(topPlacement - parseInt($(window).scrollTop(), 10))
-
-  })
+    $(".more-content").css("top", topPlacement - parseInt($(window).scrollTop(), 10));
+  });
 
 </script>
 
