@@ -39,9 +39,7 @@
           </ul>
         </nav>
 
-        <nav class="mobile">
-          <p>this is content can i see this content?</p>
-        </nav>
+
 
         {% block content %}
         {% endblock %}
@@ -76,10 +74,6 @@
             if($(window).width() < 900 || $(window).height() < 500) {
               $(".footer").hide();
               console.log($(window).height())
-            }
-            if($(window).width() < 500) {
-              $(".default").hide();
-              $(".mobile").show();
             }
           });
 
