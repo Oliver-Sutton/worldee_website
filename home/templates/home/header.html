@@ -2,8 +2,9 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Worldee</title>
+        <title>Worldee | Your Smart Travel Guide</title>
         {% load static %}
+        <link rel="icon" href="{% static 'home/images/logo.png' %}">
         <link rel="stylesheet" href="{% static 'home/css/bootstrap.css'%}">
         <link rel="stylesheet" href="{% static 'home/css/main.css' %}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -60,11 +61,39 @@
 
         <script>
 
+          var isScrolled = false;
+          var isShowing = true;
+
+          $(function(){
+            toggleFooter();
+
+
+            alert(height)
+
+          })
+
+          $(window).resize(function(){
+            toggleFooter();
+          })
+
           $(window).on("scroll", function(){
             resizeWorldeeFooter();
           });
 
-          var isScrolled = false;
+          function toggleFooter() {
+            let width = $(window).width()
+            let height = $(window).height()
+
+            if((width <= 900 && isShowing == true )|| (height <= 500 && isShowing == true)) {
+              $(".footer").hide()
+              isShowing = false
+              alert("hide")
+            } else if((isShowing == false && width > 900) || (height > 500 && isShowing == false)){
+              $(".footer").show();
+              isShowing = true;
+              alert("show")
+            }
+          }
 
           function resizeWorldeeFooter(){
 

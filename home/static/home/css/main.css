@@ -170,7 +170,6 @@ input {
 ------------------------------------------- */
 
 
-
 /* ------------------------------------------
                   Contact
 ------------------------------------------- */
@@ -182,6 +181,7 @@ input {
   text-align: center;
   color: #173872;
   font-size: 24px;
+  min-height: 100vh;
 }
 
 .header {
@@ -293,4 +293,9 @@ input {
 .content {
   text-align: justify;
   font-size: 14px;
+}
+
+.sharing-info li {
+  font-size: 14px;
+  text-align: justify;
 }
