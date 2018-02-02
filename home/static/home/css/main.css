@@ -226,6 +226,19 @@ input {
                   Index
 ------------------------------------------- */
 
+.carousel {
+  margin: 0 auto;
+  width: 30%;
+  height: 350px;
+  display: relative;
+  margin-bottom: 25%;
+}
+
+.carousel img {
+  display: hidden;
+  cursor: pointer;
+  z-index: -1;
+}
 
 /* ------------------------------------------
               Contact and FAQ
