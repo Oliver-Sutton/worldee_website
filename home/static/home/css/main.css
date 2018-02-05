@@ -169,6 +169,7 @@ input {
   position: fixed;
   bottom: 0px;
   left: 25vw;
+  z-index: 100;
 }
 
 .footer-img {
@@ -177,9 +178,11 @@ input {
 }
 
 .footer-bottom {
-  height: 40px;
+  height: 47px;
+  margin-top: -47px;
   color: #173872 !important;
   font-size: 12px !important;
+  width: 100%;
 }
 
 .footer-bottom hr {
@@ -226,6 +229,10 @@ input {
                   Index
 ------------------------------------------- */
 
+.images img {
+  width: 250px;
+  height: 500px;
+}
 
 /* ------------------------------------------
               Contact and FAQ
@@ -263,7 +270,6 @@ input {
   text-align: center;
   color: #173872;
   font-size: 24px;
-  min-height: 100vh;
 }
 
 .blog-title {
