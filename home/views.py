@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 
 # Create your views here.
 
@@ -13,3 +14,7 @@ def tandc(request):
 
 def privacy(request):
     return render(request, 'home/privacy.html')
+
+def email_list(request):
+    if request.is_ajax():
+        Nothing

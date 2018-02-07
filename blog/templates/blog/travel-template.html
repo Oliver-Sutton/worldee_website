@@ -11,18 +11,8 @@
     <p class="blog-date">Posted on {{ blog.date | date:"d.m.y"}} by {{ blog.posted_by }}</p>
   </div>
 </div>
-<div class="more-content">
-  <p>Most Recent</p>
-  <ul>
-    <li><a href="#">Place holder</a></li>
-    <li><a href="#">Place holder</a></li>
-  </ul>
-  <p>Suggested Posts</p>
-  <ul>
-    <li><a href="#">Place holder</a></li>
-    <li><a href="#">Place holder</a></li>
-  </ul>
-</div>
+
+{% include 'blog/more-posts.html' %}
 
 <script>
 
