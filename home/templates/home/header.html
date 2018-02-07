@@ -9,9 +9,35 @@
         <link rel="stylesheet" href="{% static 'home/css/main.css' %}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="{% static 'home/js/jquery.js' %}"></script>
+        <script src="{% static 'home/js/bootstrap.js' %}"></script>
     </head>
     <body>
-        <nav class="default">
+      <!-- MODAL FOR EMAIL NEWS LETTER -->
+      <div class="modal fade" id="newsLetter" tabindex="-1" role="dialog" aria-labelledby="Sign up to our news letter" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title m-header">SUBSCRIBE TO OUR NEWS LETTER</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="message-text" class="col-form-label m-header">EMAIL</label>
+                  <input placeholder="example@example.com" type="text" class="form-control" id="message-text"></input>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary">SIGN UP</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- NAV BAR -->
+      <nav class="default">
           <ul>
             <a href="/">HOME</a>
             <a href="/travel">TRAVEL</a>
@@ -41,11 +67,11 @@
 
         {% block content %}
         {% endblock %}
-
+        <!-- IMAGES FOOTER -->
         <div class="footer">
           <img class="footer-img" src="{% static 'home/images/worldeefooter.png'%}"/>
         </div>
-
+        <!-- BOTTOM FOOTER -->
         <div class="footer-bottom">
           <hr />
           <p class="copyright">
@@ -73,6 +99,9 @@
               $(".footer").hide();
               console.log($(window).height())
             }
+
+            $("#newsLetter").modal("show");
+
           });
 
           $(window).resize(function(){
@@ -111,6 +140,14 @@
               isScrolled = true
             }
           }
+
+          $('#newsLetter').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget) // Button that triggered the modal
+            var recipient = button.data('whatever') // Extract info from data-* attributes
+            // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+            // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+            var modal = $(this)
+          });
         </script>
     </body>
 </html>
