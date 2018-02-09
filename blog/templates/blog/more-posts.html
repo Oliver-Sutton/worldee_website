@@ -8,11 +8,21 @@
     <li><a href="#">Place holder</a></li>
     <hr />
   </ul>
-  <p>Suggested Posts</p>
-  <ul>
-    <li><a href="#">Place holder</a></li>
-    <li><a href="#">Place holder</a></li>
-  </ul>
 </div>
+
+<script>
+
+  $(function() {
+
+    $.ajax({
+      type: 'GET',
+      url: 'get_more_posts',
+      success: function(posts) {
+        console.log(posts);
+      },
+    });
+  });
+
+</script>
 
 {% endblock %}
