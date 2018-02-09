@@ -1,5 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from home.models import NewsLetter
+import json
+import re
 
 # Create your views here.
 
@@ -16,5 +19,18 @@ def privacy(request):
     return render(request, 'home/privacy.html')
 
 def email_list(request):
-    if request.is_ajax():
-        Nothing
+    if request.method == 'POST':
+
+        email = request.POST["email"]
+
+        if(email != "" and re.match(r"[^@]+@[^@]+\.[^@]+", email)):
+
+            NewsLetter.objects.create (
+                email = email
+            )
+
+            return HttpResponse('')
+
+        else:
+            
+            return HttpResponse('Invalid Email')

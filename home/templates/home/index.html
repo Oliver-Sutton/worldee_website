@@ -5,7 +5,7 @@
 {% load static %}
 
 <!-- MODAL FOR EMAIL NEWS LETTER -->
-<div class="modal fade" id="newsLetter" tabindex="-1" role="dialog" aria-labelledby="Sign up to our news letter" aria-hidden="true">
+<div class="modal fade" id="news-letter" tabindex="-1" role="dialog" aria-labelledby="Sign up to our news letter" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -15,15 +15,15 @@
         </button>
       </div>
       <div class="modal-body">
-        <form>
+        <form>{% csrf_token %}
           <div class="form-group">
             <label for="message-text" class="col-form-label m-header">EMAIL</label>
-            <input placeholder="example@example.com" type="text" class="form-control" id="message-text"></input>
+            <input placeholder="example@example.com" type="text" class="form-control" id="email"></input>
           </div>
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary">SIGN UP</button>
+        <button id="submit-email" type="button" class="btn btn-primary">SIGN UP</button>
       </div>
     </div>
   </div>
@@ -62,5 +62,47 @@
 
 <br /><br /><br />
 <br /><br /><br />
+
+<script>
+
+  $(function(){
+
+    if(localStorage.didEnterEmail == 'true') {
+      $('#news-letter').remove();
+    }
+
+  })
+
+  $("#submit-email").click(function(e){
+
+    e.preventDefault();
+
+    let email = $("#email").val();
+
+    if(email == "") {
+      $("#news-letter").remove();
+      return;
+    }
+
+    $.ajax({
+      url: "/submit_email",
+      type: "POST",
+      data: {
+        email: email,
+        csrfmiddlewaretoken: $("input[name=csrfmiddlewaretoken]").val(),
+      }
+    }).done(function(){
+      $("#news-letter").modal('toggle');
+
+      if(typeof(Storage) !== "undefined") {
+        localStorage.didEnterEmail = true;
+      }
+
+    });
+
+  });
+
+</script>
+
 
 {% endblock %}
