@@ -2,11 +2,43 @@
 
 {% block content %}
 
-<div class="container">
+<div class="container travel-container">
+  <img width="100" height="100" />
+  <p class="header">TRAVEL</p>
+  <ul>
   {% for blog in object_list %}
-    <p><a href="{{ blog.id }}">{{ blog.title | upper }}</a></p>
-    <p>{{ blog.date | date:"d.m.Y" }}</p>
+    {% if blog.type == 'TRAVEL' %}
+      <li>
+        <p><a href="{{ blog.id }}">{{ blog.title | upper }}</a></p>
+        <p>{{ blog.date | date:"d.m.Y" }}</p>
+      </li>
+    {% endif %}
   {% endfor %}
+  </ul>
+  <ul>
+    <img width="100" height="100" />
+    <p class="header">ATTRACTIONS</p>
+    {% for blog in object_list %}
+      {% if blog.type == 'ATTRACTIONS' %}
+        <li>
+          <p><a href="{{ blog.id }}">{{ blog.title | upper }}</a></p>
+          <p>{{ blog.date | date:"d.m.Y" }}</p>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+  <ul>
+    <img width="100" height="100" />
+    <p class="header">FOOD</p>
+    {% for blog in object_list %}
+      {% if blog.type == 'FOOD' %}
+        <li>
+          <p><a href="{{ blog.id }}">{{ blog.title | upper }}</a></p>
+          <p>{{ blog.date | date:"d.m.Y" }}</p>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
 </div>
 
 {% endblock %}

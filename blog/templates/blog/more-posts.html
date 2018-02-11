@@ -2,11 +2,7 @@
 
 <div class="more-content">
   <p>Most Recent</p>
-  <ul>
-    <li><a href="#">Place holder</a></li>
-    <hr />
-    <li><a href="#">Place holder</a></li>
-    <hr />
+  <ul id="more-posts">
   </ul>
 </div>
 
@@ -18,10 +14,26 @@
       type: 'GET',
       url: 'get_more_posts',
       success: function(posts) {
-        console.log(posts);
+
+        data = JSON.parse(posts);
+
+        setBlogPosts(data);
       },
     });
   });
+
+  function setBlogPosts(data) {
+
+    for(item in data) {
+
+      jsonObj = JSON.parse(data[item]);
+      title = jsonObj.title;
+      id = jsonObj.id;
+
+      $("#more-posts").append(`<li><a href=\"${id}\">${title}</a></li><hr />`);
+
+    }
+  }
 
 </script>
 

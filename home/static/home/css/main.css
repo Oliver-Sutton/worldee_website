@@ -7,6 +7,12 @@
     src: url('fonts/BrandonGrotesque400normal.woff');
 }
 
+@media only screen and (max-device-width: 900px) {
+  .container {
+    padding-top: 40% !important;
+  }
+}
+
 /* ------------------------------------------
                     Header
 ------------------------------------------- */
@@ -270,7 +276,22 @@ input {
 }
 
 /* ------------------------------------------
-                  Travel
+                Travel Home
+------------------------------------------- */
+
+.travel-container {
+
+  padding-bottom: 10%;
+
+}
+
+.travel-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* ------------------------------------------
+                Travel Blog
 ------------------------------------------- */
 
 .blog-container {
@@ -294,7 +315,7 @@ input {
   font-size: 38px;
   letter-spacing: 2px;
   background-color: white;
-  overflow: hidden;
+  overflow: auto;
 }
 
 .blog img {

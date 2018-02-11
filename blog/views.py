@@ -11,9 +11,7 @@ def get_more_posts(request):
         blogs = Blog.objects.order_by('date')[:5]
         data = {}
         for blog in blogs:
-            data[blog.id] = json.dumps({ "title": blog.title, "id": blog.id})
-
-        
+            data[blog.id] = json.dumps({ "title": blog.title, "id": blog.id});
 
         return HttpResponse(json.dumps(data))
 
