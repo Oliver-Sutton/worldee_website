@@ -3,9 +3,9 @@ from django.db import models
 # Create your models here.
 
 BLOG_CHOICES = (
-    ('TRAVEL', 'TRAVEL'),
-    ('ATTRACTIONS', 'ATTRACTIONS'),
-    ('FOOD', 'FOOD')
+    ('TRAVEL', 'Travel'),
+    ('ATTRACTIONS', 'Attractions'),
+    ('FOOD', 'Food')
 )
 
 class Blog(models.Model):

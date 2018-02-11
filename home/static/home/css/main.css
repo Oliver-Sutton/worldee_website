@@ -280,15 +280,37 @@ input {
 ------------------------------------------- */
 
 .travel-container {
-
   padding-bottom: 10%;
-
+  width: 50%;
 }
 
-.travel-container ul {
+.travel-posts {
+  display: none;
+  text-align: left;
   list-style: none;
-  padding: 0;
+  padding-bottom: 15px;
 }
+
+.travel-container ul li p {
+  padding-top: 10px;
+  text-overflow: ellipsis;
+}
+
+.travel-container hr {
+  background-color: #173872;
+}
+
+.date {
+  margin-left: 10%;
+  float: right;
+  font-style: italic;
+  font-size: 14px;
+}
+
+.travel-container p:hover  .travel-posts{
+  display: block;
+}
+
 
 /* ------------------------------------------
                 Travel Blog
