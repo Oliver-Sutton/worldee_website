@@ -23,6 +23,7 @@
         </form>
       </div>
       <div class="modal-footer">
+        <button id="submit-no" type="button" class="btn btn-secondary">NO THANKS</button>
         <button id="submit-email" type="button" class="btn btn-primary">SIGN UP</button>
       </div>
     </div>
@@ -99,6 +100,16 @@
       }
 
     });
+
+  });
+
+  $("#submit-no").click(function(){
+
+    if(typeof(Storage) !== "undefined") {
+      localStorage.didEnterEmail = true;
+    }
+
+    $("#news-letter").modal('toggle');
 
   });
 

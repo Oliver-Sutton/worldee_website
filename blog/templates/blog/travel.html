@@ -6,7 +6,7 @@
 
 <div class="container travel-container">
   <img src="{% static 'home/images/travel-globe.svg' %}"width="100" height="100" />
-  <p class="header travel-header">TRAVEL</p>
+  <p class="header">TRAVEL</p>
   <ul class="travel-posts travel">
   {% for blog in object_list %}
     {% if blog.type == 'TRAVEL' %}
@@ -44,6 +44,9 @@
     {% endfor %}
     <hr />
   </ul>
+
+  {% include "blog/top-posts.html" %}
+
 </div>
 
 {% endblock %}

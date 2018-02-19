@@ -16,3 +16,6 @@ class Blog(models.Model):
     body = models.TextField()
     date = models.DateTimeField()
     posted_by = models.CharField(max_length=100, default="Admin")
+
+class TopPosts(models.Model):
+    post = models.ForeignKey(Blog, on_delete=models.CASCADE)
