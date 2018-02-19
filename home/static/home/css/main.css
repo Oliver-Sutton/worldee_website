@@ -229,6 +229,12 @@ input {
               Modal styling
 ------------------------------------------- */
 
+.modal {
+
+  border-radius: 0 !important;
+
+}
+
 .m-header {
   font-weight: 700;
   font: 'BrandonGrotesque';
@@ -285,19 +291,19 @@ input {
 }
 
 .travel-posts {
-  display: none;
   text-align: left;
   list-style: none;
   padding-bottom: 15px;
 }
 
-.travel-container ul li p {
+.travel-title {
   padding-top: 10px;
   text-overflow: ellipsis;
 }
 
 .travel-container hr {
   background-color: #173872;
+  margin: 40px 0 40px 0;
 }
 
 .date {
@@ -306,11 +312,6 @@ input {
   font-style: italic;
   font-size: 14px;
 }
-
-.travel-container p:hover  .travel-posts{
-  display: block;
-}
-
 
 /* ------------------------------------------
                 Travel Blog

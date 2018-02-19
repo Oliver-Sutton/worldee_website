@@ -2,10 +2,12 @@
 
 {% block content %}
 
+{% load static %}
+
 <div class="container travel-container">
-  <img width="100" height="100" />
-  <p class="header">TRAVEL</p>
-  <ul class="travel-posts">
+  <img src="{% static 'home/images/travel-globe.svg' %}"width="100" height="100" />
+  <p class="header travel-header">TRAVEL</p>
+  <ul class="travel-posts travel">
   {% for blog in object_list %}
     {% if blog.type == 'TRAVEL' %}
     <hr />
@@ -16,22 +18,22 @@
   {% endfor %}
   <hr  />
   </ul>
-  <img width="100" height="100" />
+  <img src="{% static 'home/images/travel-attractions.svg' %}" width="100" height="100" />
   <p class="header">ATTRACTIONS</p>
-  <ul class="travel-posts">
+  <ul class="travel-posts attractions">
     {% for blog in object_list %}
       {% if blog.type == 'ATTRACTIONS' %}
       <hr  />
         <li>
-          <p><a href="{{ blog.id }}">{{ blog.title }}</a><p class="date">{{ blog.date | date:"d-m-Y" }}</p></p>
+          <p><a href="{{ blog.id }}">{{ blog.title }}</a></p><p class="date">{{ blog.date | date:"d-m-Y" }}</p>
         </li>
       {% endif %}
     {% endfor %}
     <hr />
   </ul>
-  <img width="100" height="100" />
+  <img src="{% static 'home/images/travel-food.svg' %}"width="100" height="100" />
   <p class="header">FOOD</p>
-  <ul class="travel-posts">
+  <ul class="travel-posts food">
     {% for blog in object_list %}
       {% if blog.type == 'FOOD' %}
       <hr />
