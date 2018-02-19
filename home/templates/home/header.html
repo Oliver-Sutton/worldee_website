@@ -68,13 +68,9 @@
 
           $(".mobile").hide();
 
-          console.log($(window).width())
-          console.log($(window).height())
-
           $(function(){
             if($(window).width() < 900 || $(window).height() < 500) {
               $(".footer").hide();
-              console.log($(window).height())
             }
 
             $("#news-letter").modal("show");
@@ -117,7 +113,7 @@
               isScrolled = true
             }
           }
-          
+
         </script>
     </body>
 </html>

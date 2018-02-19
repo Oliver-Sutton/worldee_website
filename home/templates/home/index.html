@@ -47,26 +47,33 @@
 
   <br /><br /><br />
 
+  <div class="carousel">
+     <img src="{% static 'home/images/0.png' %}" alt="Image 1"/>
+     <img src="{% static 'home/images/1.png' %}" alt="Image 2"/>
+     <img src="{% static 'home/images/2.png' %}" alt="Image 3"/>
+     <img src="{% static 'home/images/3.png' %}" alt="Image 4"/>
+     <img src="{% static 'home/images/4.png' %}" alt="Image 5"/>
+     <img src="{% static 'home/images/5.png' %}" alt="Image 6"/>
+  </div>
+
 </div>
 
 <br /><br /><br />
 <br /><br /><br />
 
-<div class="images">
-  <img src="{% static 'home/images/0.png' %}" width="300" height="580" />
-  <img src="{% static 'home/images/1.png' %}" width="300" height="580" />
-  <img src="{% static 'home/images/2.png' %}" width="300" height="580" />
-  <img src="{% static 'home/images/3.png' %}" width="300" height="580" />
-  <img src="{% static 'home/images/4.png' %}" width="300" height="580" />
-  <img src="{% static 'home/images/5.png' %}" width="300" height="580" />
-</div>
 
-<br /><br /><br />
-<br /><br /><br />
-
+<script src="{% static 'home/js/jquery.waterwheelCarousel.min.js' %}"></script>
 <script>
 
   $(function(){
+
+    var carousel = $('.carousel').waterwheelCarousel({
+      flankingItems: 2,
+      separation: 150,
+      forcedImageHeight: 500,
+      forcedImageWidth: 300,
+      autoPlay: 5000,
+    });
 
     if(localStorage.didEnterEmail == 'true') {
       $('#news-letter').remove();
@@ -114,6 +121,5 @@
   });
 
 </script>
-
 
 {% endblock %}
