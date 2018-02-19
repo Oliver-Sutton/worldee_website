@@ -316,14 +316,20 @@ input {
   font-size: 14px;
 }
 
-.three-posts div {
+/* ------------------------------------------
+                Top Posts
+------------------------------------------- */
+
+#top-posts div {
   display: inline-block;
   padding: 10% 5% 0 5%;
 }
 
-.three-posts div img {
-  width: 100%;
-  height: 100%;
+#top-posts div img {
+  max-width: 8em;
+  max-height: 8em;
+  height: auto;
+  width: auto;
 }
 
 /* ------------------------------------------
